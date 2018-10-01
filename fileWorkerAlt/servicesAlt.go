@@ -7,7 +7,7 @@ import (
 )
 
 func FileReadAlt(path string, fs afero.Fs) error {
-	path = strings.TrimRight(path, "/") + "/" // независим от заверщающего слега
+	path = strings.TrimRight(path, "/") + "/" // независим от заверщающего слеша
 	files, err := afero.ReadDir(fs, path)
 	if err != nil {
 		return fmt.Errorf("cannot read from file, %v", err)

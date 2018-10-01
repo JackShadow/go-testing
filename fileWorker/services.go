@@ -8,7 +8,7 @@ import (
 )
 
 func FileRead(path string) error {
-	path = strings.TrimRight(path, "/") + "/" // независим от заверщающего слега
+	path = strings.TrimRight(path, "/") + "/" // независим от заверщающего слеша
 	files, err := ioutil.ReadDir(path)
 	if err != nil {
 		return fmt.Errorf("cannot read from file, %v", err)
