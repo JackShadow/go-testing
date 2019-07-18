@@ -1,11 +1,11 @@
 package apiCaller
 
 import (
-	"testing"
-	"net/http/httptest"
-	"net/http"
 	"errors"
 	"fmt"
+	"net/http"
+	"net/http/httptest"
+	"testing"
 )
 
 func TestApiCaller(t *testing.T) {
@@ -25,7 +25,7 @@ func TestApiCaller(t *testing.T) {
 	user := User{id: 1}
 	err := ApiCaller(&user, ts.URL)
 	if err != nil {
-		t.Error("Ecspect no error", err)
+		t.Error("Expect no error", err)
 	}
 
 	if user.rating != 42 {
