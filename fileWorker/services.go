@@ -1,14 +1,14 @@
 package fileWorker
 
 import (
-	"strings"
-	"io/ioutil"
 	"fmt"
+	"io/ioutil"
 	"os"
+	"strings"
 )
 
 func FileRead(path string) error {
-	path = strings.TrimRight(path, "/") + "/" // независим от заверщающего слеша
+	path = strings.TrimRight(path, "/") + "/" // so not to depend on the closing slash
 	files, err := ioutil.ReadDir(path)
 	if err != nil {
 		return fmt.Errorf("cannot read from file, %v", err)
@@ -20,7 +20,7 @@ func FileRead(path string) error {
 		if err != nil {
 			return err
 		}
-		err = os.Remove(deleteFileName) // после вывода удаляем файл
+		err = os.Remove(deleteFileName) // clearing test files
 	}
 	return nil
 }
